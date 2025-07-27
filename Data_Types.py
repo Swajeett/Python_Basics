@@ -1,0 +1,10 @@
+x = 10              #int
+y = 3.14            #float
+z = 2 + 3j          #complex
+name = "Alice"      #str
+nums = [1, 2, 3]    #list
+points = (4, 5)     #tuple
+colors = {"red", "blue"}    #set
+person = {"name": "Bob", "age":30}  #dict
+flag = True         #bool
+data = b"Hello"     #bytes
