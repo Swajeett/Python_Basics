@@ -1,16 +1,35 @@
-# Range of Indexes
-# Return the third, fourth and fifth item:
+N = 10
+K = 5
 
-thislist = ["apple", "banana", "cherry", "orange", "kiwi", "melon", "mango"]
-print(thislist[2:5])
+jar = N
 
-print (thislist[:4])
+def sell(order):
+    global jar
+    if order <= 0 or order > jar :
+        print ("INVALID INPUT")
+        print (f"NUMBER OF CANDIES LEFT:{jar}")
+        return
+    
+    jar -= order
+    print (f"NUMBER OF CANDIES SOLD: {order}")
+    print (f"NUMBER OF CANDIES LEFT: {jar}")
 
-print (thislist[2:])
+'''if jar <= K:
+    jar = N
+    print ("JAR IS REFILLED TO FULL (10 CANDIES)")
+'''
 
-# Range of Negative Indexes
-# This example returns the items from "orange" (-4) to, but NOT including "mango" (-1):
+while True:
+    try:
+        user_input = int(input("Enter number of candies to buy (o to exit):"))
+        if user_input == 0:
+            print ("INVALID INPUT")
+            print (f"NUMBER OF CANDiES LEFT: {jar}")
+            break
+        sell (user_input)
 
-thislist = ["apple", "banana", "cherry", "orange", "kiwi", "melon", "mango"]
-print (thislist[-4:-1])
-
+        if jar <= K :
+            jar = N
+            print ("JAR IS REFILLED TO FULL (10 CANDIES)")
+    except ValueError:
+        print ("Please enter a valid integer.")
